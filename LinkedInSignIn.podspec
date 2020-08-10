@@ -37,5 +37,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'WebKit'
-  s.dependency 'MBProgressHUD', '~> 1.0'
+  #s.dependency 'MBProgressHUD', '~> 1.0'
 end
