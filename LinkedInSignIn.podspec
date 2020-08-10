@@ -22,11 +22,11 @@ Pod::Spec.new do |s|
                        DESC
 
   s.pod_target_xcconfig = { "SWIFT_VERSION" => "4.2" }
-  s.homepage         = 'https://github.com/serhii-londar/LinkedInSignIn'
+  s.homepage         = 'https://github.com/magdy-kamal-ok/LinkedInSignIn'
   s.screenshots     = 'https://i.imgur.com/R8haoKu.png', 'https://i.imgur.com/QzjcjDR.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Serhii Londar' => 'serhii.londar@gmail.com' }
-  s.source           = { :git => 'https://github.com/serhii-londar/LinkedInSignIn.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/magdy-kamal-ok/LinkedInSignIn', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/serhii_londar'
 
   s.ios.deployment_target = '9.0'
@@ -37,5 +37,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'WebKit'
-  #s.dependency 'MBProgressHUD', '~> 1.0'
+  s.dependency 'MBProgressHUD', '~> 1.0'
 end

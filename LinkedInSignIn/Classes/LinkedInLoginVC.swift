@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import MBProgressHUD
+import MBProgressHUD
 import WebKit
 
 enum LinkedInLoginError: Error {
@@ -37,7 +37,7 @@ class LinkedInLoginVC: UIViewController {
         navigationBar.barTintColor = self.navigationColor
         self.view.backgroundColor = self.navigationColor
         self.addWebView()
-        //self.showHUD()
+        self.showHUD()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -85,7 +85,7 @@ class LinkedInLoginVC: UIViewController {
 
 extension LinkedInLoginVC: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        //self.hideHUD()
+        self.hideHUD()
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
@@ -144,28 +144,28 @@ extension LinkedInLoginVC {
     }
 }
 
-//extension LinkedInLoginVC {
-//    func showHUD() {
-//        DispatchQueue.main.async {
-//            let progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
-//            UIActivityIndicatorView.appearance(whenContainedInInstancesOf: [MBProgressHUD.self]).color = UIColor.white
-//            if let labeltext = self.loadingTitleString {
-//                progressHUD?.labelText = labeltext
-//            }
-//            if let labelFont = self.loadingTitleFont {
-//                progressHUD?.labelFont = labelFont
-//            }
-//            progressHUD?.color = UIColor(red: 0.0/255.0, green: 119.0/255.0, blue: 181.0/255.0, alpha: 1.0)
-//            progressHUD?.bringSubviewToFront(self.view)
-//        }
-//    }
-//
-//    func hideHUD() {
-//        DispatchQueue.main.async {
-//            MBProgressHUD.hide(for: self.view, animated: true)
-//        }
-//    }
-//}
+extension LinkedInLoginVC {
+    func showHUD() {
+        DispatchQueue.main.async {
+            let progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
+            UIActivityIndicatorView.appearance(whenContainedInInstancesOf: [MBProgressHUD.self]).color = UIColor.white
+            if let labeltext = self.loadingTitleString {
+                progressHUD?.labelText = labeltext
+            }
+            if let labelFont = self.loadingTitleFont {
+                progressHUD?.labelFont = labelFont
+            }
+            progressHUD?.color = UIColor(red: 0.0/255.0, green: 119.0/255.0, blue: 181.0/255.0, alpha: 1.0)
+            progressHUD?.bringSubviewToFront(self.view)
+        }
+    }
+
+    func hideHUD() {
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
+    }
+}
 
 extension LinkedInLoginVC {
     func addWebView() {
